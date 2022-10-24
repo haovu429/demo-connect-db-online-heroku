@@ -32,14 +32,16 @@ public class ConnectionUtil {
 
       // assign from environment variable
       String url = System.getenv("DATASOURCE_URL");
-      String user = System.getProperty("DATASOURCE_USERNAME");
-      String password = System.getProperty("DATASOURCE_PASSWORD");
+      String user = System.getenv("DATASOURCE_USERNAME");
+      String password = System.getenv("DATASOURCE_PASSWORD");
 
       // create a connection to the database
       conn = DriverManager.getConnection(url, user, password);
     } catch (IOException e) {
       System.out.println(e.getMessage());
     } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    } catch (Exception e) {
       e.printStackTrace();
     }
     return conn;
