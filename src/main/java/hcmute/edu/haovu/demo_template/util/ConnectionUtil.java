@@ -26,9 +26,14 @@ public class ConnectionUtil {
       pros.load(input);
 
       // assign db parameters
-      String url = pros.getProperty("url");
+      /*String url = pros.getProperty("url");
       String user = pros.getProperty("user");
-      String password = pros.getProperty("password");
+      String password = pros.getProperty("password");*/
+
+      // assign from environment variable
+      String url = System.getenv("DATASOURCE_URL");
+      String user = System.getProperty("DATASOURCE_USERNAME");
+      String password = System.getProperty("DATASOURCE_PASSWORD");
 
       // create a connection to the database
       conn = DriverManager.getConnection(url, user, password);
