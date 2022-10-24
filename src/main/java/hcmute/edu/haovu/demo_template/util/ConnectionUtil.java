@@ -41,8 +41,6 @@ public class ConnectionUtil {
       System.out.println(e.getMessage());
     } catch (ClassNotFoundException e) {
       e.printStackTrace();
-    } catch (Exception e) {
-      e.printStackTrace();
     }
     return conn;
   }
