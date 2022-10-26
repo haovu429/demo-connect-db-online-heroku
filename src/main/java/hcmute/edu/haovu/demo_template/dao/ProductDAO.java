@@ -21,7 +21,6 @@ public class ProductDAO {
       conn = ConnectionUtil.getConnection();
       ps = conn.prepareStatement(sql);
       rs = ps.executeQuery();
-
       while (rs.next()) {
         ProductEntity product = new ProductEntity();
 
