@@ -23,7 +23,7 @@ public class ShopServlet extends HttpServlet {
 
         List<ProductEntity> products = new ArrayList<>();
         ProductDAO productDAO = new ProductDAO();
-        products = productDAO.getAllProduct();
+        products = productDAO.getListProduct();
         for(ProductEntity product : products) {
             System.out.println(product);
         }

@@ -1,12 +1,15 @@
 package hcmute.edu.haovu.demo_template.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*; //version hibernate > 6.
+import lombok.*;
 
-import javax.persistence.*;
+
+//import javax.persistence.*; for version hibernate < 6.
+
 // lombok
-@Data
+
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
