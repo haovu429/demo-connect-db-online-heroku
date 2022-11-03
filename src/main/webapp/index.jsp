@@ -733,10 +733,16 @@
         </div>
     </div>
 </div>
+<form action="<%=request.getContextPath()%>/TimeTaskServlet" >
+    <input type="email" name="email_time_task" placeholder="haovu123@gmail.com" required>
+    <button type="submit" class="btn btn-danger">Start time task</button>
+</form>
+<%--<a class="btn btn-danger" href="<%=request.getContextPath()%>/TimeTaskServlet" role="button">Start time task</a>--%>
 <!-- Footer End -->
 
 
 <!-- Back to Top -->
+
 <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
