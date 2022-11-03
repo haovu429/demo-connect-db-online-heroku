@@ -243,7 +243,8 @@
     </div>
 </div>
 
-<a class="btn btn-primary" style="text-align: center;" href="<%=request.getContextPath()%>/manager/insert.jsp" role="button">Them
-    SV</a>
+<a class="btn btn-primary" style="text-align: center;" href="<%=request.getContextPath()%>/manager/insert.jsp" role="button">Add product</a>
+
+<a class="btn btn-primary" style="text-align: center;" href="<%=request.getContextPath()%>/shop" role="button">Shop</a>
 </body>
 </html>
