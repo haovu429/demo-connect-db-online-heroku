@@ -185,13 +185,13 @@
             <table class="table table-striped table-hover table-bordered">
                 <thead>
                 <tr>
-                    <th>MaSV <i class="fa fa-sort"></i></th>
-                    <th>HoTen</th>
-                    <th>Phai <i class="fa fa-sort"></i></th>
-                    <th>Ngay Sinh</th>
-                    <th>Que Quan <i class="fa fa-sort"></i></th>
-                    <th>Dia Chi</th>
-                    <th>So DT</th>
+                    <th>Id <i class="fa fa-sort"></i></th>
+                    <th>Title</th>
+                    <th>Price <i class="fa fa-sort"></i></th>
+                    <th>Size</th>
+                    <th>Color<i class="fa fa-sort"></i></th>
+                    <th>Description</th>
+                    <th>Image</th>
                     <th>Action</th>
                 </tr>
                 </thead>
