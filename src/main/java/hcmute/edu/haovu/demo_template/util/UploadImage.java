@@ -50,7 +50,7 @@ public class UploadImage {
 
         try {
             // Destroy the image
-            Map params1 = ObjectUtils.asMap("resource_type", "image", "folder", "puzzle_ute/user/avatar", "type", "upload", "invalidate", true);
+            Map params1 = ObjectUtils.asMap("resource_type", "image", "type", "upload", "invalidate", true);
 
             Map result = cloudinary.uploader().destroy(Constant.STORAGE_IMAGE_LOCATION + "/" + imageName, params1);
             return result;

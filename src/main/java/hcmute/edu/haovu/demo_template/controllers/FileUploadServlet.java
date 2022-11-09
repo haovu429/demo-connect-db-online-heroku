@@ -21,6 +21,7 @@ import java.util.Map;
 )
 public class FileUploadServlet extends HttpServlet {
 
+    @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        response.setContentType("application/json");
 //        response.setCharacterEncoding("UTF-8");
@@ -36,4 +37,12 @@ public class FileUploadServlet extends HttpServlet {
     //        }
     //        response.getWriter().print("The file uploaded sucessfully.");
   }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String url = "/upload_file.jsp";
+        getServletContext()
+                .getRequestDispatcher(url)
+                .forward(req, resp);
+    }
 }
