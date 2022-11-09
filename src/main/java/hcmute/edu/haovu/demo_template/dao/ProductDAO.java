@@ -3,7 +3,6 @@ package hcmute.edu.haovu.demo_template.dao;
 import hcmute.edu.haovu.demo_template.entities.ProductEntity;
 import hcmute.edu.haovu.demo_template.util.ConnectionUtil;
 import hcmute.edu.haovu.demo_template.util.HibernateUtility;
-import jakarta.transaction.Transactional;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
