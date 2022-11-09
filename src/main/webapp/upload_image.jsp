@@ -9,18 +9,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Java File Upload Servlet Example </title>
+    <title> Java Ajax File Upload Example </title>
 </head>
 <body>
+<!-- HTML5 Input Form Elements -->
+<input id="ajaxfile" type="file"/> <br/>
+<button onclick="uploadFile()"> Upload</button>
 
-<form method="post" action="<%=request.getContextPath()%>/fileuploadservlet" enctype="multipart/form-data">
-  <input type="file" name="file" />
-  <input type="submit" value="Upload" />
+<!-- Ajax to Java File Upload Logic -->
+<script>
+    async function uploadFile() {
+        let formData = new FormData();
+        formData.append("file", ajaxfile.files[0]);
+        await fetch('fileuploadservlet', {
+            method: "POST",
+            body: formData
+        });
+        alert('The file upload with Ajax and Java was a success!');
+    }
+</script>
+
+<form method="post" action="<%=request.getContextPath()%>/fileuploadservlet" enctype="multipart/form-data" >
+    Choose a file: <input type="file" name="multiPartServlet" multiple="multiple"/>
+    <input type="submit" value="Upload" />
 </form>
-
-<form>
-
-</form>
-
 </body>
 </html>

@@ -20,7 +20,6 @@ public class UploadImage {
             //String encodedString = new String(image);
 
             Base64 base64 = new Base64();
-
             String encodedString = base64.encodeToString(sourceBytes);
 
             // Upload the image

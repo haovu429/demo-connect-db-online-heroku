@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 @WebServlet(name = "FileUploadServlet", urlPatterns = { "/fileuploadservlet" })
@@ -25,11 +27,18 @@ public class FileUploadServlet extends HttpServlet {
 //        response.setContentType("application/json");
 //        response.setCharacterEncoding("UTF-8");
         /* Receive file uploaded to the Servlet from the HTML5 form */
-        Part filePart = request.getPart("file");
-        String fileName = filePart.getSubmittedFileName();
-        Map result = UploadImage.uploadAvatarImage(fileName, filePart);
+        Collection<Part> fileParts = request.getParts();
+        for (Part part : fileParts) {
+            String fileName = part.getSubmittedFileName();
+            Map result = UploadImage.uploadAvatarImage(fileName, part);
+            String url = String.valueOf(result.get("url"));
+            System.out.println(url);
+            if (result == null) {
+                throw new RuntimeException("Loi upload");
+            }
+        }
         PrintWriter out = response.getWriter();
-        out.println(result);
+        out.println("Upload success");
 
     //        for (Part part : request.getParts()) {
     //            part.write("C:\\upload\\" + fileName);
