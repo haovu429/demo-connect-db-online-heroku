@@ -1,5 +1,7 @@
 package hcmute.edu.haovu.demo_template.mail;
 
+import com.sun.org.apache.xpath.internal.operations.Or;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -28,7 +30,7 @@ public class SendMail {
         properties.put("mail.smtp.ssl.enable", "true");
         properties.put("mail.smtp.auth", "true");
 
-        System.getenv("EMAIL");
+        ///System.getenv("EMAIL");
 
         // Get the Session object.// and pass username and password
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
@@ -59,7 +61,6 @@ public class SendMail {
 
             // Now set the actual message
             message.setText("Vietnam opening!");
-
             System.out.println("sending...");
             // Send message
             Transport.send(message);
@@ -68,6 +69,9 @@ public class SendMail {
             mex.printStackTrace();
         }
 
+    }
+    public static void main(String[] args) {
+        sendMail("haovu961@gmail.com");
     }
 
 }

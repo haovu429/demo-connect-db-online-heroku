@@ -24,7 +24,7 @@ public class HibernateUtility {
         settings.put(Environment.USER, System.getenv("DATASOURCE_USERNAME"));
         settings.put(Environment.PASS, System.getenv("DATASOURCE_PASSWORD"));
         // https://stackoverflow.com/questions/43716068/invalid-syntax-error-type-myisam-in-ddl-generated-by-hibernate
-        settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
+        settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
 
         settings.put(Environment.SHOW_SQL, "true");
 
