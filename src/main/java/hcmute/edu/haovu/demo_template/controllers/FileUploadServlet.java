@@ -1,5 +1,6 @@
 package hcmute.edu.haovu.demo_template.controllers;
 
+import hcmute.edu.haovu.demo_template.util.Constant;
 import hcmute.edu.haovu.demo_template.util.UploadImage;
 
 import javax.servlet.ServletException;
@@ -31,8 +32,11 @@ public class FileUploadServlet extends HttpServlet {
         Collection<Part> fileParts = request.getParts();
         for (Part part : fileParts) {
             String fileName = part.getSubmittedFileName();
-            Map result = UploadImage.uploadAvatarImage(fileName, part);
+            Map result = UploadImage.uploadAvatarImage(fileName, Constant.STORAGE_IMAGE_LOCATION, part);
+
+            // Lấy url từ response
             String url = String.valueOf(result.get("url"));
+
             System.out.println(url);
             if (result == null) {
                 throw new RuntimeException("Loi upload");

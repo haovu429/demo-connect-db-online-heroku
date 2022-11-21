@@ -1,6 +1,6 @@
 package hcmute.edu.haovu.demo_template.mail;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
+//import com.sun.org.apache.xpath.internal.operations.Or;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -20,7 +20,6 @@ public class SendMail {
         // Assuming you are sending email from through gmails smtp
         String host = "smtp.gmail.com";
 
-
         // Get system properties
         Properties properties = System.getProperties();
 
@@ -37,7 +36,7 @@ public class SendMail {
 
             protected PasswordAuthentication getPasswordAuthentication() {
                  //setup app password reference https://support.google.com/accounts/answer/185833?hl=en
-                return new PasswordAuthentication(from, "zprsgnutogpsjaak");
+                return new PasswordAuthentication(from, System.getenv("APP_PASSWORD"));
 
             }
 
@@ -57,7 +56,7 @@ public class SendMail {
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 
             // Set Subject: header field
-            message.setSubject("Vietnam status from Tool!");
+            message.setSubject("Có đơn hàng mới nè 2!");
 
             // Now set the actual message
             message.setText("Vietnam opening!");

@@ -1,6 +1,9 @@
 package hcmute.edu.haovu.demo_template.util;
 
 import hcmute.edu.haovu.demo_template.entities.ProductEntity;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -10,6 +13,10 @@ import org.hibernate.service.ServiceRegistry;
 import java.util.Properties;
 
 public class HibernateUtility {
+
+  private static EntityManagerFactory entityManagerFactory;
+
+  private static EntityManager entityManager;
   private static SessionFactory sessionFactory;
 
   public static SessionFactory getSessionFactory() {
@@ -48,5 +55,13 @@ public class HibernateUtility {
       }
     }
     return sessionFactory;
+  }
+
+  public static EntityManager getSessionFactoryXml() {
+    if (entityManagerFactory == null) {
+      entityManagerFactory = Persistence.createEntityManagerFactory("PictureStoreWebsite");
+      entityManager = entityManagerFactory.createEntityManager();
+    }
+    return entityManager;
   }
 }

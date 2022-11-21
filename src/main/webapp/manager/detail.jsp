@@ -4,7 +4,7 @@
 <header>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </header>
-<form action="<%=request.getContextPath()%>/UpdateServlet">
+<form method="post" action="<%=request.getContextPath()%>/UpdateServlet" enctype="multipart/form-data">
     <div class="form-row">
         <div class="col-md-4 mb-3">
             <label for="validationDefault01">Id</label>
@@ -41,7 +41,9 @@
     </div>
     <label >Image</label>
     <input type="text" class="form-control" id="validationDefault15" name="image" placeholder="Ảnh xinh" value="${o.image}">
-<%--    <input type="date" id="birthday" name="birthday" value="${o.birthday}">--%>
+    <img src="${o.image}" style=" max-width: 100%; height: 500px; object-fit: cover;">
+    <input type="file" name="file" multiple="multiple" />
+    <%--    <input type="date" id="birthday" name="birthday" value="${o.birthday}">--%>
 <%--    <div class="form-group">--%>
 <%--        <div class="form-check">--%>
 <%--            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>--%>

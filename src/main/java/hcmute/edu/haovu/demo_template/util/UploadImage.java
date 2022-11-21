@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
 import java.util.Map;
 
 public class UploadImage {
-    public static Map uploadAvatarImage(String imageName, Part file) {
+    public static Map uploadAvatarImage(String imageName,String folderPath, Part file) {
         Cloudinary cloudinary = CloudinaryUtil.getCloudinary();
 
         try {
@@ -21,12 +21,14 @@ public class UploadImage {
 
             Base64 base64 = new Base64();
             String encodedString = base64.encodeToString(sourceBytes);
+            System.out.println(encodedString);
+//            File file1 = new File("")
 
             // Upload the image
             Map params1 =
                     ObjectUtils.asMap(
                             "folder",
-                            Constant.STORAGE_IMAGE_LOCATION,
+                            folderPath,
                             "public_id",
                             imageName,
                             "use_filename",

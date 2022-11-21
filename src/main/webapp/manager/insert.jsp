@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
 </header>
-<form action="<%=request.getContextPath()%>/TaoSVServlet">
+<form method="post" action="<%=request.getContextPath()%>/CreateServlet" enctype="multipart/form-data">
     <div class="form-row">
         <%--        <div class="col-md-4 mb-3">--%>
         <%--            <label for="validationDefault01">Ma SV</label>--%>
@@ -60,6 +60,8 @@
     <label >Image</label>
     <input type="text" class="form-control" id="validationDefault45" name="image" placeholder="Ảnh xinh xẻo"
            value="${o.image}">
+    <img src="${o.image}">
+    <input type="file" name="file" multiple="multiple" />
 <%--    <input type="date" id="birthday" name="birthday">--%>
 <%--    <div class="form-group">--%>
 <%--        <div class="form-check">--%>
