@@ -17,8 +17,8 @@ public class ConnectionUtil {
   public static Connection getConnection() throws SQLException {
     Connection conn = null;
 
-
-    try (InputStream input = ConnectionUtil.class.getClassLoader().getResourceAsStream("db.properties")) {
+    try (InputStream input =
+        ConnectionUtil.class.getClassLoader().getResourceAsStream("db.properties")) {
 
       Class.forName("com.mysql.cj.jdbc.Driver");
       // load the properties file
