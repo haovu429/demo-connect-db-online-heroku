@@ -8,31 +8,40 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "ShopServlet", value = "/shop")
-public class ShopServlet extends HttpServlet {
+@WebServlet(name = "AddToCartServlet", value = "/AddToCartServlet")
+public class AddToCartServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String url = "/shop.jsp";
+       String url ="/cart";
 
-        List<ProductEntity> products = new ArrayList<>();
-        ProductDAO productDAO = new ProductDAO();
-        products = productDAO.getListProduct();
-        for(ProductEntity product : products) {
-            System.out.println(product);
+        Long id = Long.parseLong(request.getParameter("productId"));
+        Long quantity = Long.parseLong(request.getParameter("quantity"));
+        if (id == null) {
+            //throw exception
         }
-        request.setAttribute("productList",products);
+
+        ProductDAO productDAO = new ProductDAO();
+
+        ProductEntity product = productDAO.getProductById(id);
+
+        HttpSession session = request.getSession();
+        Cart cart = (Cart) session.getAttribute("cart");
+        if (cart == null) {
+            cart = new Cart();
+        }
+        cart.addLineItem(product, quantity);
+
+        request.setAttribute("cart", cart);
 
         getServletContext()
                 .getRequestDispatcher(url)
                 .forward(request, response);
-
     }
 }
