@@ -1,0 +1,56 @@
+-- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
+--
+-- Host: localhost    Database: test_template
+-- ------------------------------------------------------
+-- Server version	8.0.29
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `product`
+--
+
+DROP TABLE IF EXISTS `product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `product` (
+  `id` bigint NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `price` bigint DEFAULT NULL,
+  `size` varchar(50) DEFAULT NULL,
+  `color` varchar(50) DEFAULT NULL,
+  `description` text,
+  `image` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product`
+--
+
+-- LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (1,'Áo Dạ',450000,'L','black','quá đẹp lun','https://image-us.24h.com.vn/upload/3-2021/images/2021-08-14/1-1628937802-189-width650height800.jpg'),(2,'Quần vải nam ống hàn quốc',500000,'M','blue','Quần xịn xò, siêu sang trọng','https://i.pinimg.com/564x/ee/ae/d9/eeaed97bebeb51e3fe93161ce432b3b4.jpg'),(3,'Quần đùi con vịt ',200000,'M','yellow','Con vịt dễ thương goá dời','https://i.pinimg.com/564x/9e/00/c1/9e00c1e6fced10c9970265f92cbf0f92--ulzzang-makeup-lip-makeup.jpg'),(4,'Áo thun',350000,'XL','green','Lá chuối ','https://image-us.24h.com.vn/upload/2-2022/images/2022-04-01/1648776168-b5664361500237dc4fd142b6d5cd6ef4-width624height390.jpg'),(5,'Áo len',367000,'M','white','Nhập khẩu','https://images.pexels.com/photos/2836485/pexels-photo-2836485.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+--UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2022-11-02 15:08:17
