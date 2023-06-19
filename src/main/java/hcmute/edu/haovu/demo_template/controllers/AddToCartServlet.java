@@ -13,18 +13,20 @@ import java.util.List;
 @WebServlet(name = "AddToCartServlet", value = "/AddToCartServlet")
 public class AddToCartServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       String url ="/cart";
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String url = "/cart";
 
         Long id = Long.parseLong(request.getParameter("productId"));
         Long quantity = Long.parseLong(request.getParameter("quantity"));
         if (id == null) {
-            //throw exception
+            // throw exception
         }
 
         ProductDAO productDAO = new ProductDAO();
